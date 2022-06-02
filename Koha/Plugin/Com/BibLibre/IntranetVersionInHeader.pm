@@ -54,13 +54,21 @@ sub uninstall {
 sub intranet_js {
     my ( $self ) = @_;
 
-    my $kohaversion = Koha::version();
-    my $link='https://koha-community.org/category/release/';
-    my $content = qq|<li id='koha-plugin-src-version'><a target='_blank' href='$link' style='color:#538200'>Koha $kohaversion</a></li>|;
+    my $version_string = Koha::version();
+    my ( $major, $minor, $maintenance, $development ) = split( '\.', $version_string );
+    $maintenance .= q|.| . $development unless $development eq '000';
+
+    # <li><a> is for styling like other links in header
+    my @content = (
+        q|<li id="koha-plugin-version-in-header"><a href="#">|,
+        qq|<span style="color:#363636">$major.$minor</span>|,
+        qq|<span style="color:#777777;font-size:.5em;font-weight:normal">.$maintenance</span>|,
+        q|</a></li>|
+    );
     return q|
 <script>
     $(document).ready(function(){
-        $("#header #toplevelmenu").append("|.$content.q|");
+        $("#header #toplevelmenu").append('|.join(q||,@content).q|');
     });
 </script>
 |;
