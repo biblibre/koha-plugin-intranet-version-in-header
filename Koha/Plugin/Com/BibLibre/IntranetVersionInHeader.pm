@@ -9,9 +9,9 @@ use C4::Context;
 our $VERSION = '1.1';
 
 our $metadata = {
-    name   => 'Intranet version and search engine in header',
+    name   => 'Intranet version in header',
     author => 'BibLibre',
-    description => 'Display Koha version in staff interface header',
+    description => 'Display Koha version and search engine in staff interface header',
     date_authored   => '2021-01-13',
     date_updated    => '2022-02-01',
     minimum_version => '18.11',
