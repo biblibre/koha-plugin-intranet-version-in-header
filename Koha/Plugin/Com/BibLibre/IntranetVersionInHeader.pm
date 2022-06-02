@@ -64,7 +64,7 @@ sub intranet_js {
     my @content = (
         q|<li id="koha-plugin-version-in-header"><a href="#" style="color:#363636">|,
         qq|<span>$major.$minor</span>|,
-        qq|<span style="color:#777777;font-size:.5em;font-weight:normal">.$maintenance</span>|,
+        qq|<span style="color:#777777;font-weight:normal">.$maintenance</span>|,
         qq|</span> - $searchengine</span>|,
         q|</a></li>|
     );
