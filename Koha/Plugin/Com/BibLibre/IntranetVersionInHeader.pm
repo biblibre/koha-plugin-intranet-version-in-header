@@ -6,14 +6,14 @@ use base qw(Koha::Plugins::Base);
 
 use C4::Context;
 
-our $VERSION = '1.1';
+our $VERSION = '1.2';
 
 our $metadata = {
     name   => 'Intranet version in header',
     author => 'BibLibre',
     description => 'Display Koha version and search engine in staff interface header',
     date_authored   => '2021-01-13',
-    date_updated    => '2022-02-01',
+    date_updated    => '2022-11-29',
     minimum_version => '18.11',
     maximum_version => undef,
     version         => $VERSION,
@@ -62,7 +62,7 @@ sub intranet_js {
 
     # <li><a> is for styling like other links in header
     my @content = (
-        q|<li id="koha-plugin-version-in-header"><a href="#" style="color:#363636">|,
+        q|<li id="koha-plugin-version-in-header"><a href="#">|,
         qq|<span>$major.$minor</span>|,
         qq|<span style="color:#777777;font-weight:normal">.$maintenance</span>|,
         qq|</span> - $searchengine</span>|,
