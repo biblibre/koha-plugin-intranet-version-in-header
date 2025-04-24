@@ -1,5 +1,8 @@
 # Koha plugin to display Koha version in staff interface header
 
+Obsolete since :
+Bug 27497: Display Koha version in staff interface home page
+
 ## Presentation
 
 Adds JS code to display Koha version YY.MM.XX.YYY in staff interface header.
